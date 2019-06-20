@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger2Middleware } from './middlewares/logger2.middleware';
-import { HttpExceptionFilter } from './filters/filter.filter';
+import { HttpExceptionFilter } from './filters/http-exception.filter';
 import {ValidationPipe} from './pipes/validation.pipe';
 import {AuthGuard} from './guards/auth.guard';
 

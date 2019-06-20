@@ -9,6 +9,8 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { RolesGuard } from './guards/roles.guard';
 // import { CorsMiddleware } from './middlewares/cors.middleware';
 import { CategoryModule } from './modules/category/category.module';
+import { MenuModule } from './modules/menu/menu.module';
+import { TodoModule } from './modules/todo/todo.module';
 
 @Module({
   controllers: [AppController, UsersController, TagsController],
@@ -16,7 +18,7 @@ import { CategoryModule } from './modules/category/category.module';
     provide: APP_GUARD,
     useClass: RolesGuard,
   }*/],
-  imports: [CategoryModule],
+  imports: [CategoryModule, MenuModule, TodoModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

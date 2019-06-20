@@ -1,35 +1,35 @@
-import { Injectable, Param } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ICategoryService } from './category-service.interface';
 import { Category } from './category.interface';
 
 @Injectable()
 export class CategoryService implements ICategoryService {
-  async getCategory(): Promise<Category> {
-    return {
-      id: 1,
-      text: 'test',
-      userId: 1,
-      isDel: 1,
-      isPub: 1,
-    };
+  private category = {
+    id: 1,
+    text: 'test',
+    userId: 1,
+    isDel: 1,
+    isPub: 1,
+  };
+
+  async getCategory(): Promise<[Category]> {
+    return [this.category];
   }
-  async addCategory(): Promise<any> {
-    return [];
+
+  async addCategory(): Promise<boolean> {
+    return true;
   }
-  async delCategory(): Promise<any> {
-    return [];
+
+  async delCategory(id: any): Promise<boolean> {
+    return true;
   }
-  async updateCategory(): Promise<any> {
-    return [];
+
+  async updateCategory(id: any): Promise<boolean> {
+    return true;
   }
+
   // todo params: number
-  async queryCategory(params: any): Promise<Category> {
-    return {
-      id: params.id,
-      text: 'test',
-      userId: 1,
-      isDel: 1,
-      isPub: 1,
-    };
+  async queryCategory(id: any): Promise<[Category]> {
+    return [this.category];
   }
 }
