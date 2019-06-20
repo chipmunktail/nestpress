@@ -19,8 +19,8 @@ export class MenuController {
     return await this.menuServise.delMenu(id);
   }
   @Put()
-  async updateMenu(@Body() id, @Body() menu: MenuDto): Promise<boolean> {
-    return await this.menuServise.updateMenu(id, menu);
+  async updateMenu(@Body() menu: Menu): Promise<boolean> {
+    return await this.menuServise.updateMenu(menu);
   }
   @Get(':id')
   async queryMenu(@Param() id): Promise<[Menu]> {

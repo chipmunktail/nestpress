@@ -23,7 +23,7 @@ export class MenuService implements IMenuService {
     return true;
   }
 
-  async updateMenu(id: any, menuDto: Menu): Promise<boolean> {
+  async updateMenu(menu: Menu): Promise<boolean> {
     return true;
   }
 
