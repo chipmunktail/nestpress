@@ -20,6 +20,7 @@ export class CategoryDto implements Category {
   @IsInt({ message: 'isDel必须是整数', context: { errorCode: NotAcceptableException } })
   @Min(0, { message: 'isDel必须大于等于1', context: { errorCode: NotAcceptableException } })
   readonly isDel: number;
+
   @IsInt({ message: 'isPub必须是整数', context: { errorCode: NotAcceptableException } })
   @Min(0, { message: 'isPub必须大于等于1', context: { errorCode: NotAcceptableException } })
   readonly isPub: number;

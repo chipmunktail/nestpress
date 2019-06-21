@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { MenuService } from './menu.service';
 import { Menu } from './menu.interface';
 import { MenuDto } from './menu.dto';
@@ -15,7 +15,7 @@ export class MenuController {
     return await this.menuServise.addMenu(menu);
   }
   @Delete()
-  async delMenu(@Body() id): Promise<boolean> {
+  async delMenu(@Query() id): Promise<boolean> {
     return await this.menuServise.delMenu(id);
   }
   @Put()

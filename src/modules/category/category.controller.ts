@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Head, Headers, Param, ParseIntPipe, Post, Put, Query, Req } from '@nestjs/common';
 import { Category } from './category.interface';
 import { CategoryService } from './category.service';
 import { CategoryDto } from './category.dto';
@@ -17,12 +17,12 @@ export class CategoryController {
     return await this.categoryService.addCategory();
   }
   @Delete()
-  async delCategory(@Param('id', new ParseIntPipe()) id): Promise<boolean> {
+  async delCategory(@Query('id', new ParseIntPipe()) id): Promise<boolean> {
     return await this.categoryService.delCategory(id);
   }
   @Put()
-  async updateCategory(@Param('id', new ParseIntPipe()) id, @Body() category: CategoryDto): Promise<boolean> {
-    return await this.categoryService.updateCategory(id);
+  async updateCategory(@Body() category: Category): Promise<boolean> {
+    return await this.categoryService.updateCategory(category);
   }
   @Get(':id')
   async queryCategory(@Param('id', new ParseIntPipe()) id): Promise<[Category]> {

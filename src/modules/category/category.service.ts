@@ -24,7 +24,7 @@ export class CategoryService implements ICategoryService {
     return true;
   }
 
-  async updateCategory(id: any): Promise<boolean> {
+  async updateCategory(category: Category): Promise<boolean> {
     return true;
   }
 
