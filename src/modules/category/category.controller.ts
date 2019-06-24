@@ -9,7 +9,14 @@ export class CategoryController {
   constructor(readonly categoryService: CategoryService) {
   }
   @Get()
-  async getCategory(): Promise<[Category]> {
+  async getCategory(): Promise<Category[]> {
+    await this.categoryService.getCategory()
+      .then(res => {
+        console.log(res, '=====');
+      })
+      .catch(err => {
+        console.log(err, '/////');
+      })
     return await this.categoryService.getCategory();
   }
   @Post()
@@ -25,7 +32,7 @@ export class CategoryController {
     return await this.categoryService.updateCategory(category);
   }
   @Get(':id')
-  async queryCategory(@Param('id', new ParseIntPipe()) id): Promise<[Category]> {
+  async queryCategory(@Param('id', new ParseIntPipe()) id): Promise<Category[]> {
     return await this.categoryService.queryCategory(id);
   }
 }

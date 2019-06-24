@@ -11,7 +11,7 @@ export class MenuService implements IMenuService {
     isDel: 0,
   };
 
-  async getMenu(): Promise<[Menu]> {
+  async getMenu(): Promise<Menu[]> {
     return [this.menu];
   }
 
@@ -27,7 +27,7 @@ export class MenuService implements IMenuService {
     return true;
   }
 
-  async queryMenu(id: any): Promise<[Menu]> {
+  async queryMenu(id: any): Promise<Menu[]> {
     return [this.menu];
   }
 }

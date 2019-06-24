@@ -1,9 +1,9 @@
 import { Category } from './category.interface';
 
 export interface ICategoryService {
-  getCategory(): Promise<[Category]>;
+  getCategory(): Promise<Category[]>;
   addCategory(): Promise<boolean>;
   delCategory(id: any): Promise<boolean>;
   updateCategory(category: Category): Promise<boolean>;
-  queryCategory(id: any): Promise<[Category]>;
+  queryCategory(id: any): Promise<Category[]>;
 }

@@ -8,7 +8,7 @@ export class TodoController {
   }
 
   @Get()
-  async getTodo(): Promise<[Todo]> {
+  async getTodo(): Promise<Todo[]> {
     return this.todoService.getTodo();
   }
 
@@ -28,7 +28,7 @@ export class TodoController {
   }
 
   @Get(':id')
-  async queryTodo(@Param() id): Promise<[Todo]> {
+  async queryTodo(@Param() id): Promise<Todo[]> {
     return this.todoService.queryTodo(id);
   }
 }

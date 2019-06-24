@@ -7,7 +7,7 @@ import { MenuDto } from './menu.dto';
 export class MenuController {
   constructor(readonly menuServise: MenuService) {}
   @Get()
-  async getMenu(): Promise<[Menu]> {
+  async getMenu(): Promise<Menu[]> {
     return await this.menuServise.getMenu();
   }
   @Post()
@@ -23,7 +23,7 @@ export class MenuController {
     return await this.menuServise.updateMenu(menu);
   }
   @Get(':id')
-  async queryMenu(@Param() id): Promise<[Menu]> {
+  async queryMenu(@Param() id): Promise<Menu[]> {
     return await this.menuServise.queryMenu(id);
   }
 }

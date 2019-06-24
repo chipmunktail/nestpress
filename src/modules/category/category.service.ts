@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { ICategoryService } from './category-service.interface';
 import { Category } from './category.interface';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { CategoryEntity } from './category.entity';
 
 @Injectable()
 export class CategoryService implements ICategoryService {
@@ -11,9 +14,13 @@ export class CategoryService implements ICategoryService {
     isDel: 1,
     isPub: 1,
   };
-
-  async getCategory(): Promise<[Category]> {
-    return [this.category];
+  constructor(
+    @InjectRepository(CategoryEntity)
+    private readonly categoryRepository: Repository<CategoryEntity>,
+  ) {}
+  async getCategory(): Promise<Category[]> {
+    // return [this.category];
+    return await this.categoryRepository.find();
   }
 
   async addCategory(): Promise<boolean> {
@@ -29,7 +36,7 @@ export class CategoryService implements ICategoryService {
   }
 
   // todo params: number
-  async queryCategory(id: any): Promise<[Category]> {
+  async queryCategory(id: any): Promise<Category[]> {
     return [this.category];
   }
 }

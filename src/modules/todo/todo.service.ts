@@ -11,7 +11,7 @@ export class TodoService implements ITodoService {
     isDel: 1,
   };
 
-  async getTodo(): Promise<[Todo]> {
+  async getTodo(): Promise<Todo[]> {
     return [this.todo];
   }
 
@@ -27,7 +27,7 @@ export class TodoService implements ITodoService {
     return true;
   }
 
-  async queryTodo(id: any): Promise<[Todo]> {
+  async queryTodo(id: any): Promise<Todo[]> {
     return [this.todo];
   }
 }
