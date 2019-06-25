@@ -11,9 +11,10 @@ import { RolesGuard } from './guards/roles.guard';
 import { CategoryModule } from './modules/category/category.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { TodoModule } from './modules/todo/todo.module';
-// Typeorm
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {Connection} from 'typeorm';
+import { AuthModule } from './modules/auth/auth.module';
+// Typeorm
 
 @Module({
   controllers: [AppController, UsersController, TagsController],
@@ -21,7 +22,7 @@ import {Connection} from 'typeorm';
     provide: APP_GUARD,
     useClass: RolesGuard,
   }*/],
-  imports: [TypeOrmModule.forRoot(), CategoryModule, MenuModule, TodoModule],
+  imports: [TypeOrmModule.forRoot(), CategoryModule, MenuModule, TodoModule, AuthModule],
 })
 export class AppModule implements NestModule {
   constructor(private readonly connection: Connection) {}
