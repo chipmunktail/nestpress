@@ -1,9 +1,9 @@
-import { Todo } from './todo.interface';
+import { ITodo } from './todo.interface';
 
 export interface ITodoService {
-  getTodo(): Promise<Todo[]>;
-  addTodo(todo: Todo): Promise<boolean>;
+  getTodo(): Promise<ITodo[]>;
+  addTodo(todo: ITodo): Promise<boolean>;
   delTodo(id: any): Promise<boolean>;
-  updateTodo(todo: Todo): Promise<boolean>;
-  queryTodo(id: any): Promise<Todo[]>;
+  updateTodo(todo: ITodo): Promise<boolean>;
+  queryTodo(id: any): Promise<ITodo[]>;
 }

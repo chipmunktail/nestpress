@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { TodoService } from './todo.service';
-import { Todo } from './todo.interface';
+import { ITodo } from './todo.interface';
 
 @Controller('todo')
 export class TodoController {
@@ -8,12 +8,12 @@ export class TodoController {
   }
 
   @Get()
-  async getTodo(): Promise<Todo[]> {
+  async getTodo(): Promise<ITodo[]> {
     return this.todoService.getTodo();
   }
 
   @Post()
-  async addTodo(@Body() todo: Todo): Promise<boolean> {
+  async addTodo(@Body() todo: ITodo): Promise<boolean> {
     return this.todoService.addTodo(todo);
   }
 
@@ -23,12 +23,12 @@ export class TodoController {
   }
 
   @Put()
-  async updateTodo(@Body() todo: Todo): Promise<boolean> {
+  async updateTodo(@Body() todo: ITodo): Promise<boolean> {
     return this.todoService.updateTodo(todo);
   }
 
   @Get(':id')
-  async queryTodo(@Param() id): Promise<Todo[]> {
+  async queryTodo(@Param() id): Promise<ITodo[]> {
     return this.todoService.queryTodo(id);
   }
 }

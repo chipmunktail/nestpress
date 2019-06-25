@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Category } from './category.interface';
+import { ICategory } from './category.interface';
 
 @Entity()
-export class CategoryEntity implements Category {
+export class Category implements ICategory {
   @PrimaryGeneratedColumn()
   id: number;
 

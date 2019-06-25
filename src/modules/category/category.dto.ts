@@ -1,8 +1,8 @@
-import { Category } from './category.interface';
+import { ICategory } from './category.interface';
 import { IsString, IsInt, IsNotEmpty, Min, Max } from 'class-validator';
 import { NotAcceptableException } from '@nestjs/common';
 
-export class CategoryDto implements Category {
+export class CategoryDto implements ICategory {
 
   @IsInt({ message: 'categoryID必须是整数', context: { errorCode: NotAcceptableException } })
   @Min(0, { message: 'categoryID必须大于等于1', context: { errorCode: NotAcceptableException } })

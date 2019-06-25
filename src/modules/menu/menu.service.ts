@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IMenuService } from './menu-service.interface';
-import { Menu } from './menu.interface';
+import { IMenu } from './menu.interface';
 
 @Injectable()
 export class MenuService implements IMenuService {
@@ -11,11 +11,11 @@ export class MenuService implements IMenuService {
     isDel: 0,
   };
 
-  async getMenu(): Promise<Menu[]> {
+  async getMenu(): Promise<IMenu[]> {
     return [this.menu];
   }
 
-  async addMenu(menu: Menu): Promise<boolean> {
+  async addMenu(menu: IMenu): Promise<boolean> {
     return true;
   }
 
@@ -23,11 +23,11 @@ export class MenuService implements IMenuService {
     return true;
   }
 
-  async updateMenu(menu: Menu): Promise<boolean> {
+  async updateMenu(menu: IMenu): Promise<boolean> {
     return true;
   }
 
-  async queryMenu(id: any): Promise<Menu[]> {
+  async queryMenu(id: any): Promise<IMenu[]> {
     return [this.menu];
   }
 }

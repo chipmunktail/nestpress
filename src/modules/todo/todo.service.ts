@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ITodoService } from './todo-service.interface';
-import { Todo } from './todo.interface';
+import { ITodo } from './todo.interface';
 
 @Injectable()
 export class TodoService implements ITodoService {
@@ -11,11 +11,11 @@ export class TodoService implements ITodoService {
     isDel: 1,
   };
 
-  async getTodo(): Promise<Todo[]> {
+  async getTodo(): Promise<ITodo[]> {
     return [this.todo];
   }
 
-  async addTodo(todo: Todo): Promise<boolean> {
+  async addTodo(todo: ITodo): Promise<boolean> {
     return true;
   }
 
@@ -23,11 +23,11 @@ export class TodoService implements ITodoService {
     return true;
   }
 
-  async updateTodo(todo: Todo): Promise<boolean> {
+  async updateTodo(todo: ITodo): Promise<boolean> {
     return true;
   }
 
-  async queryTodo(id: any): Promise<Todo[]> {
+  async queryTodo(id: any): Promise<ITodo[]> {
     return [this.todo];
   }
 }

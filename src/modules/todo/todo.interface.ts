@@ -1,4 +1,4 @@
-export interface Todo {
+export interface ITodo {
   readonly id: number;
   readonly text: string;
   readonly menuId: number;

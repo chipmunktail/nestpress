@@ -1,22 +1,21 @@
 import { Body, Controller, Delete, Get, Head, Headers, Param, ParseIntPipe, Post, Put, Query, Req } from '@nestjs/common';
-import { Category } from './category.interface';
+import { ICategory } from './category.interface';
 import { CategoryService } from './category.service';
 import { CategoryDto } from './category.dto';
-import { type } from 'os';
 
 @Controller('category')
 export class CategoryController {
   constructor(readonly categoryService: CategoryService) {
   }
   @Get()
-  async getCategory(): Promise<Category[]> {
+  async getCategory(): Promise<ICategory[]> {
     await this.categoryService.getCategory()
       .then(res => {
-        console.log(res, '=====');
+        // console.log(res);
       })
       .catch(err => {
-        console.log(err, '/////');
-      })
+        // console.log(err);
+      });
     return await this.categoryService.getCategory();
   }
   @Post()
@@ -28,11 +27,11 @@ export class CategoryController {
     return await this.categoryService.delCategory(id);
   }
   @Put()
-  async updateCategory(@Body() category: Category): Promise<boolean> {
+  async updateCategory(@Body() category: ICategory): Promise<boolean> {
     return await this.categoryService.updateCategory(category);
   }
   @Get(':id')
-  async queryCategory(@Param('id', new ParseIntPipe()) id): Promise<Category[]> {
+  async queryCategory(@Param('id', new ParseIntPipe()) id): Promise<ICategory[]> {
     return await this.categoryService.queryCategory(id);
   }
 }

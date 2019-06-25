@@ -1,8 +1,8 @@
-import { Menu } from './menu.interface';
+import { IMenu } from './menu.interface';
 import { IsString, IsInt, IsNotEmpty, Min, Max } from 'class-validator';
 import { NotAcceptableException } from '@nestjs/common';
 
-export class MenuDto implements Menu {
+export class MenuDto implements IMenu {
   @IsInt({message: 'id int?', context: {errorCode: NotAcceptableException}})
   readonly id: number;
   @IsString({ message: '字段名是必不可少的', context: { errorCode: NotAcceptableException } })

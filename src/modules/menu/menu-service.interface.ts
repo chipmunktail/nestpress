@@ -1,9 +1,9 @@
-import { Menu } from './menu.interface';
+import { IMenu } from './menu.interface';
 
 export interface IMenuService {
-  getMenu(): Promise<Menu[]>;
-  addMenu(menu: Menu): Promise<boolean>;
+  getMenu(): Promise<IMenu[]>;
+  addMenu(menu: IMenu): Promise<boolean>;
   delMenu(id: any): Promise<boolean>;
-  updateMenu(menuDto: Menu): Promise<boolean>;
-  queryMenu(id: any): Promise<Menu[]>;
+  updateMenu(menuDto: IMenu): Promise<boolean>;
+  queryMenu(id: any): Promise<IMenu[]>;
 }
