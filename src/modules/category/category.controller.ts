@@ -10,7 +10,7 @@ export class CategoryController {
   }
 
   @Get()
-  @UseGuards(AuthGuard())
+  @UseGuards(AuthGuard('jwt'))
   async getCategory(): Promise<ICategory[]> {
     await this.categoryService.getCategory()
       .then(res => {
