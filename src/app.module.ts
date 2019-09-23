@@ -11,6 +11,7 @@ import { RolesGuard } from './guards/roles.guard';
 import { CategoryModule } from './modules/category/category.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { TodoModule } from './modules/todo/todo.module';
+import { HistoryModule } from './modules/history/history.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { AuthModule } from './modules/auth/auth.module';
@@ -29,6 +30,7 @@ import { CacheModule } from './processors/cache/cache.module';
     CategoryModule,
     MenuModule,
     TodoModule,
+    HistoryModule,
     AuthModule,
     CacheModule,
   ],
