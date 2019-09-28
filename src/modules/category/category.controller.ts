@@ -33,7 +33,7 @@ export class CategoryController {
   }
 
   @Put()
-  async updateCategory(@Body() category: ICategory): Promise<boolean> {
+  async updateCategory(@Body() category: CategoryDto): Promise<boolean> {
     return await this.categoryService.updateCategory(category);
   }
 

@@ -6,6 +6,7 @@ import { ITodo } from './todo.interface';
 export class TodoService implements ITodoService {
   private todo = {
     id: 1,
+    uuid: '6c84fb90-12c4-11e1-840d-7b25c5ee775c',
     text: 'todo',
     menuId: 1,
     isDel: 1,

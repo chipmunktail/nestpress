@@ -7,11 +7,11 @@ import { MenuDto } from './menu.dto';
 export class MenuController {
   constructor(readonly menuServise: MenuService) {}
   @Get()
-  async getMenu(): Promise<IMenu[]> {
-    return await this.menuServise.getMenu();
+  async getMenu(@Query() query): Promise<IMenu[]> {
+    return await this.menuServise.getMenu(query);
   }
   @Post()
-  async addMenu(@Body() menu: IMenu): Promise<boolean> {
+  async addMenu(@Body() menu: MenuDto): Promise<boolean> {
     return await this.menuServise.addMenu(menu);
   }
   @Delete()
@@ -19,7 +19,7 @@ export class MenuController {
     return await this.menuServise.delMenu(id);
   }
   @Put()
-  async updateMenu(@Body() menu: IMenu): Promise<boolean> {
+  async updateMenu(@Body() menu: MenuDto): Promise<boolean> {
     return await this.menuServise.updateMenu(menu);
   }
   @Get(':id')

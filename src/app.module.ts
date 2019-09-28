@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersService } from './modules/users/users.service';
 import { UsersController } from './modules/users/users.controller';
-import { TagsController } from './modules/tags/tags.controller';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { RolesGuard } from './guards/roles.guard';
 // import { CorsMiddleware } from './middlewares/cors.middleware';
@@ -20,7 +19,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CacheModule } from './processors/cache/cache.module';
 
 @Module({
-  controllers: [AppController, UsersController, TagsController],
+  controllers: [AppController, UsersController],
   providers: [AppService, UsersService, /*{
     provide: APP_GUARD,
     useClass: RolesGuard,

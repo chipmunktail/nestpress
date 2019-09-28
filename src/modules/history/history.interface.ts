@@ -6,4 +6,3 @@ export interface IHistory {
     readonly operateType: string;
     readonly time: Date;
   }
-  

@@ -9,6 +9,7 @@ import { Category } from './category.entity';
 export class CategoryService implements ICategoryService {
   private category = {
     id: 1,
+    uuid: '6c84fb90-12c4-11e1-840d-7b25c5ee775a',
     text: 'test',
     userId: 1,
     isDel: 1,

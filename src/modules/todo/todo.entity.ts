@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { ICategory } from './category.interface';
+import { ITodo } from './todo.interface';
 
 @Entity()
-export class Category implements ICategory {
+export class Todo implements ITodo {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -13,11 +13,8 @@ export class Category implements ICategory {
   text: string;
 
   @Column('int')
-  userId: number;
+  menuId: number;
 
   @Column('int')
   isDel: number;
-
-  @Column('int')
-  isPub: number;
 }
