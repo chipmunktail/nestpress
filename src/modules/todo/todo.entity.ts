@@ -12,7 +12,7 @@ export class Todo implements ITodo {
   @Column({ length: 500 })
   text: string;
 
-  @Column('int')
+  @Column('varchar')
   menuId: number;
 
   @Column('int')

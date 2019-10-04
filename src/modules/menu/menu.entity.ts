@@ -12,7 +12,7 @@ export class Menu implements IMenu {
   @Column({ length: 500 })
   text: string;
 
-  @Column('int')
+  @Column('varchar')
   categoryId: string;
 
   @Column('int')

@@ -3,7 +3,7 @@ import { MenuService } from './menu.service';
 import { IMenu } from './menu.interface';
 import { MenuDto } from './menu.dto';
 
-@Controller('menu')
+@Controller('menu') // test
 export class MenuController {
   constructor(readonly menuServise: MenuService) {}
   @Get()
