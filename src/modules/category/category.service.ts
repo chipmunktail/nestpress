@@ -11,7 +11,7 @@ export class CategoryService implements ICategoryService {
     id: 1,
     uuid: '6c84fb90-12c4-11e1-840d-7b25c5ee775a',
     text: 'test',
-    userId: 1,
+    userId: '6c84fb90-12c4-11e1-840d-7b25c5ee7601',
     isDel: 1,
     isPub: 1,
   };

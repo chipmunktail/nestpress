@@ -12,8 +12,8 @@ export class Category implements ICategory {
   @Column({ length: 500 })
   text: string;
 
-  @Column('int')
-  userId: number;
+  @Column('varchar')
+  userId: string;
 
   @Column('int')
   isDel: number;
